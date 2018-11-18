@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>my-bonita-connector</artifactId>
+        <groupId>org.bonitasoft.connectors</groupId>
+        <version>1.0.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <properties>
+        <bonita.engine.version>7.2.4</bonita.engine.version>
+    </properties>
+
+    <artifactId>set-list-busines-object</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>set-list-busines-object-def</module>
+        <module>set-list-busines-object-impl</module>
+    </modules>
+
+    <dependencies>
+    <dependency>
+        <!-- Latest Version of Bonita released, against which the initial development
+            has been done. -->
+        <!-- The connector will be tested against more recent version -->
+        <artifactId>bonita-common</artifactId>
+        <groupId>org.bonitasoft.engine</groupId>
+        <version>${bonita.engine.version}</version>
+        <scope>provided</scope>
+    </dependency>
+</dependencies>
+
+
+</project>

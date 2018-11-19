@@ -4,13 +4,14 @@
   <version>1.0.0</version>
   <category icon="database.png" id="evad"/>
 
-    <input name="node_url" mandatory="true" type="java.lang.String"/>
+  <input name="node_url" mandatory="true" type="java.lang.String"/>
+  <input name="myList" type="java.util.List"/>
 
   <output name="status" type="java.lang.Integer"/>
 
-
- <page id="client-page">
+  <page id="client-page">
     <widget xsi:type="definition:Text" id="node_url" inputName="node_url"/>
+    <widget xsi:type="definition:List" id="myListWidget" inputName="myList"/>
+  </page>
 
- </page>
 </definition:ConnectorDefinition>

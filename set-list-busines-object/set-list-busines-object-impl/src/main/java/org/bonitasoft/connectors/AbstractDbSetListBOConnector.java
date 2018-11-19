@@ -6,25 +6,34 @@ import org.bonitasoft.engine.connector.ConnectorValidationException;
 public abstract class AbstractDbSetListBOConnector  extends AbstractConnector
  {
 
-    protected final static String URL_INPUT_PARAMETER = "node_url";
-    protected final String STATUS_OUTPUT_PARAM = "status";
+     protected final static String NODE_URL_INPUT_PARAMETER = "node_url";
+     protected final static String MYLIST_INPUT_PARAMETER = "myList";
+     protected final String STATUS_OUTPUT_PARAMETER = "status";
 
-    //inputs
-    protected final String getUrl() {
-        return (String) getInputParameter(URL_INPUT_PARAMETER);
-    }
+     protected final java.lang.String getNode_url() {
+         return (java.lang.String) getInputParameter(NODE_URL_INPUT_PARAMETER);
+     }
 
-    //outputs
-    protected final void setStatus(Integer responseStatus) {
-        setOutputParameter(STATUS_OUTPUT_PARAM, responseStatus);
-    }
+     protected final java.util.List getMyList() {
+         return (java.util.List) getInputParameter(MYLIST_INPUT_PARAMETER);
+     }
 
-    @Override
-    public void validateInputParameters() throws ConnectorValidationException {
-        try {
-           getUrl();
-        } catch (ClassCastException cce) {
-            throw new ConnectorValidationException("url type is invalid");
-        }
-    }
-}
+     //output
+     protected final void setStatus(java.lang.Integer status) {
+         setOutputParameter(STATUS_OUTPUT_PARAMETER, status);
+     }
+
+     @Override
+     public void validateInputParameters() throws ConnectorValidationException {
+         try {
+             getNode_url();
+         } catch (ClassCastException cce) {
+             throw new ConnectorValidationException("node_url type is invalid");
+         }
+         try {
+             getMyList();
+         } catch (ClassCastException cce) {
+             throw new ConnectorValidationException("myList type is invalid");
+         }
+     }
+ }

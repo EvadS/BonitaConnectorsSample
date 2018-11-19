@@ -11,7 +11,16 @@ public class DbSetListBOConnector extends AbstractDbSetListBOConnector {
     protected void executeBusinessLogic() throws ConnectorException {
 
         logger.info("========================================");
-        logger.info("apiUrl  : " + getUrl());
+        logger.info("apiUrl  : " + getNode_url());
+
+
+        if(getMyList()!= null && getMyList().size()>0)
+        {
+            for (Object i:getMyList()) {
+                logger.info(String.format("%s : " ,i.toString()));
+            }
+        }
+        logger.error(String.format("my list is empty or null   "));
 
         setStatus(500);
     }
